@@ -7,6 +7,7 @@ import java.util.Map;
 
 @org.springframework.stereotype.Controller
 public class Controller {
+    //
 
     @GetMapping("/")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name,
