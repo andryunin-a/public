@@ -22,5 +22,12 @@ pipeline {
                 echo 'Hello World 2'
             }
         }
+        stage('Build') {
+       docker.image('maven:3.3.3-jdk-8').inside {
+           git 'https://github.com/andryunin-dev/jenkins.git'
+           sh 'mvn clean package'
+       }
+      
+   }
     }
 }
